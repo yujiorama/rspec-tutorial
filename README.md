@@ -343,6 +343,7 @@ its を share_examples_for に移した。
         7 examples, 0 failures
 
 NG word のサイズを返すことのテストを追加した。
+サイズを見るための have マッチャを使うように変更。
         $ rspec -I. -fs message_filter_spec.rb                   
         
         MessageFilter
@@ -363,3 +364,4 @@ NG word のサイズを返すことのテストを追加した。
         
         Finished in 0.00252 seconds
         8 examples, 0 failures
+
