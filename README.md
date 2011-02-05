@@ -87,3 +87,14 @@ example を追加した。
     
     Finished in 0.00052 seconds
     2 examples, 0 failures
+
+ここで tag "1st_spec_refactoring" を打つ。
+    $ git tag
+    1st_spec_refactoring
+
+テストをリファクタリング。
+    $ rspec -I. message_filter_spec.rb
+    ..
+    
+    Finished in 0.00052 seconds
+    2 examples, 0 failures
