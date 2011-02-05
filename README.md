@@ -264,3 +264,21 @@ describe をネストして、くどいメッセージをすっきりさせて�
         
         Finished in 0.00253 seconds
         6 examples, 1 failure
+
+明白な実装をした。
+        $ rspec -I. -fs message_filter_spec.rb
+        
+        MessageFilter
+          with argument "foo"
+            ng_words should not be empty
+            it should behave like exercise with argument "foo"
+              should be detect "hello from foo"
+              should not be detect "hello world"
+          with argument "foo","bar"
+            should be detect "hello from foo"
+            it should behave like exercise with argument "foo"
+              should be detect "hello from foo"
+              should not be detect "hello world"
+        
+        Finished in 0.00221 seconds
+        6 examples, 0 failures
