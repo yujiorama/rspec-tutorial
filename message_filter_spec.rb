@@ -8,10 +8,10 @@ describe MessageFilter do
   end
 
   it "should detect message with NG word" do
-    @filter.detect?("hello from foo").should == true
+    @filter.should be_detect("hello from foo")
   end
   
   it "should not detect message without NG word" do
-    @filter.detect?("hello world").should == false
+    @filter.should_not be_detect("hello world")
   end
 end
