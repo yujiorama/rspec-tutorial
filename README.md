@@ -92,7 +92,7 @@ example を追加した。
     $ git tag
     1st_spec_refactoring
 
-テストをリファクタリング。
+テストをリファクタリング。デフォルト扱いな引数 :each も削除。
     $ rspec -I. message_filter_spec.rb
     ..
     
