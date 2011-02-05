@@ -228,3 +228,9 @@ describe をネストして、くどいメッセージをすっきりさせて�
         
         Finished in 0.00227 seconds
         5 examples, 0 failures
+
+2nd イテレーションの終わりなので tag end_of_2nd を打つ。
+        $ git tag
+        1st_spec_refactoring
+        end_of_1st
+        end_of_2nd
