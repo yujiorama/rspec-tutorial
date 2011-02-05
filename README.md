@@ -98,3 +98,18 @@ example を追加した。
     
     Finished in 0.00052 seconds
     2 examples, 0 failures
+
+it にくっつけてる説明を消して rspec に推測させる。
+    $ rspec -I. message_filter_spec.rb    
+    ..
+    
+    Finished in 0.00067 seconds
+    2 examples, 0 failures
+    $ rspec -I. -fs message_filter_spec.rb
+    
+    MessageFilter
+      should be detect "hello from foo"
+      should not be detect "hello world"
+    
+    Finished in 0.00079 seconds
+    2 examples, 0 failures
