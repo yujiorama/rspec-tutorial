@@ -12,6 +12,9 @@ describe MessageFilter do
   context 'with argument "foo"' do
     subject { MessageFilter.new("foo") }
     it_should_behave_like 'exercise with argument "foo"'
+    it 'ng_wors size is 1' do
+      subject.ng_words.size.should == 1
+    end
   end
 
   context 'with argument "foo","bar"' do

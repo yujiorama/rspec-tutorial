@@ -341,3 +341,25 @@ its を share_examples_for に移した。
         
         Finished in 0.00222 seconds
         7 examples, 0 failures
+
+NG word のサイズを返すことのテストを追加した。
+        $ rspec -I. -fs message_filter_spec.rb                   
+        
+        MessageFilter
+          with argument "foo"
+            ng_wors size is 1
+            it should behave like exercise with argument "foo"
+              should be detect "hello from foo"
+              should not be detect "hello world"
+              ng_words
+                should not be empty
+          with argument "foo","bar"
+            should be detect "hello from foo"
+            it should behave like exercise with argument "foo"
+              should be detect "hello from foo"
+              should not be detect "hello world"
+              ng_words
+                should not be empty
+        
+        Finished in 0.00252 seconds
+        8 examples, 0 failures
