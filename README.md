@@ -80,3 +80,10 @@ example を追加した。
     
     Finished in 0.00062 seconds
     2 examples, 1 failure
+
+正しい実装に直した。
+    $ rspec -I. message_filter_spec.rb
+    ..
+    
+    Finished in 0.00052 seconds
+    2 examples, 0 failures
