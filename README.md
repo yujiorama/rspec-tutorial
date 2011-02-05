@@ -113,3 +113,13 @@ it にくっつけてる説明を消して rspec に推測させる。
     
     Finished in 0.00079 seconds
     2 examples, 0 failures
+
+説明をもっと追加。
+    $ rspec -I. -fs message_filter_spec.rb                                 
+    
+    MessageFilter with argument "foo"
+      should be detect "hello from foo"
+      should not be detect "hello world"
+    
+    Finished in 0.00079 seconds
+    2 examples, 0 failures
