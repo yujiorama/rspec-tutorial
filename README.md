@@ -115,6 +115,7 @@ it にくっつけてる説明を消して rspec に推測させる。
     2 examples, 0 failures
 
 説明をもっと追加。テスト対象を subject で宣言してコードを洗練。
+before が仕事してないので subject でインスタンスを生成するように変更。
     $ rspec -I. -fs message_filter_spec.rb                                 
     
     MessageFilter with argument "foo"
