@@ -283,3 +283,21 @@ predicate マッチャを使うようにした。rspec のバージョンによ�
         
         Finished in 0.00221 seconds
         6 examples, 0 failures
+
+it の説明を rspec に任せるようにしたら微妙な結果になった。
+        $ rspec -I. -fs message_filter_spec.rb
+        
+        MessageFilter
+          with argument "foo"
+            should not be empty
+            it should behave like exercise with argument "foo"
+              should be detect "hello from foo"
+              should not be detect "hello world"
+          with argument "foo","bar"
+            should be detect "hello from foo"
+            it should behave like exercise with argument "foo"
+              should be detect "hello from foo"
+              should not be detect "hello world"
+        
+        Finished in 0.00183 seconds
+        6 examples, 0 failures
