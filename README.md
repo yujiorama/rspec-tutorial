@@ -186,3 +186,20 @@ before が仕事してないので subject でインスタンスを生成する�
     
     Finished in 0.00214 seconds
     5 examples, 0 failures
+
+テストの重複を、share_examples_for と it_should_behave_like で除去する。
+    $ rspec -I. -fs message_filter_spec.rb                                                
+    
+    MessageFilter with argument "foo"
+      it should behave like MessageFilter with argument "foo"
+        should be detect "hello from foo"
+        should not be detect "hello world"
+    
+    MessageFilter with argument "foo","bar"
+      should be detect "hello from foo"
+      it should behave like MessageFilter with argument "foo"
+        should be detect "hello from foo"
+        should not be detect "hello world"
+    
+    Finished in 0.00195 seconds
+    5 examples, 0 failures
