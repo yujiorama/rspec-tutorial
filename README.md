@@ -301,3 +301,22 @@ it の説明を rspec に任せるようにしたら微妙な結果になった�
         
         Finished in 0.00183 seconds
         6 examples, 0 failures
+
+its を使うとちょっとましになった。
+        $ rspec -I. -fs message_filter_spec.rb                                         
+        
+        MessageFilter
+          with argument "foo"
+            it should behave like exercise with argument "foo"
+              should be detect "hello from foo"
+              should not be detect "hello world"
+            ng_words
+              should not be empty
+          with argument "foo","bar"
+            should be detect "hello from foo"
+            it should behave like exercise with argument "foo"
+              should be detect "hello from foo"
+              should not be detect "hello world"
+        
+        Finished in 0.00191 seconds
+        6 examples, 0 failures

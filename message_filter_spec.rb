@@ -11,7 +11,7 @@ describe MessageFilter do
   context 'with argument "foo"' do
     subject { MessageFilter.new("foo") }
     it_should_behave_like 'exercise with argument "foo"'
-    it { subject.ng_words.should_not be_empty }
+    its(:ng_words) { should_not be_empty }
   end
 
   context 'with argument "foo","bar"' do
