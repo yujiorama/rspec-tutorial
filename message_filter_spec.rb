@@ -13,3 +13,9 @@ describe MessageFilter, 'with argument "foo"' do
     should_not be_detect("hello world")
   }
 end
+
+describe MessageFilter, 'with argument "foo","bar"' do
+  subject { MessageFilter.new("foo", "bar") }
+  it { should be_detect("hello from foo") }
+end
+

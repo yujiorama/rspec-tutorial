@@ -1,7 +1,9 @@
 http://d.hatena.ne.jp/t-wada/20100228/p1
 
-最初の spec 実行
-----------------
+1st イテレーション
+==================
+
+最初の spec 実行。
 ちゃんと失敗する。
     $ rspec message_filter_spec.rb
     /home/yuji/.gem/ruby/1.9.1/gems/rspec-core-2.4.0/lib/rspec/core/backward_compatibility.rb:20:in `const_missing': uninitialized constant Object::MessageFilter (NameError)
@@ -129,3 +131,30 @@ before が仕事してないので subject でインスタンスを生成する�
     $ git tag
     1st_spec_refactoring
     end_of_1st
+
+
+2nd イテレーション
+==================
+引数を 2 つにした example を書く。
+    $ rspec -I. -fs message_filter_spec.rb
+    
+    MessageFilter with argument "foo"
+      should be detect "hello from foo"
+      should not be detect "hello world"
+    
+    MessageFilter with argument "foo","bar"
+       (FAILED - 1)
+    
+    Failures:
+    
+      1) MessageFilter with argument "foo","bar" 
+         Failure/Error: subject { MessageFilter.new("foo", "bar") }
+         ArgumentError:
+           wrong number of arguments (2 for 1)
+         # ./message_filter.rb:2:in `initialize'
+         # ./message_filter_spec.rb:18:in `new'
+         # ./message_filter_spec.rb:18:in `block (2 levels) in <top (required)>'
+         # ./message_filter_spec.rb:19:in `block (2 levels) in <top (required)>'
+    
+    Finished in 0.00145 seconds
+    3 examples, 1 failure
