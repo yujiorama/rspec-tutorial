@@ -171,3 +171,18 @@ before が仕事してないので subject でインスタンスを生成する�
     
     Finished in 0.00118 seconds
     3 examples, 0 failures
+
+引数が 1 つの example のテストを、引数が複数の example に混ぜる。
+    $ rspec -I. -fs message_filter_spec.rb                           
+    
+    MessageFilter with argument "foo"
+      should be detect "hello from foo"
+      should not be detect "hello world"
+    
+    MessageFilter with argument "foo","bar"
+      should be detect "hello from foo"
+      should be detect "hello from foo"
+      should not be detect "hello world"
+    
+    Finished in 0.00214 seconds
+    5 examples, 0 failures
