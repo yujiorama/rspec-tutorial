@@ -124,3 +124,8 @@ before が仕事してないので subject でインスタンスを生成する�
     
     Finished in 0.00079 seconds
     2 examples, 0 failures
+
+1st イテレーションはこれで終わりなので tag end_of_1st を打つ。
+    $ git tag
+    1st_spec_refactoring
+    end_of_1st
