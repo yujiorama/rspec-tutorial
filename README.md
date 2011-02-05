@@ -65,3 +65,18 @@ detect? メソッドの空実装をしてみた。
     
     Finished in 0.00038 seconds
     1 example, 0 failures
+
+example を追加した。
+    $ rspec -I. message_filter_spec.rb
+    .F
+    
+    Failures:
+    
+      1) MessageFilter should not detect message without NG word
+         Failure/Error: filter.detect?("hello world").should == false
+           expected: false
+                got: true (using ==)
+         # ./message_filter_spec.rb:13:in `block (2 levels) in <top (required)>'
+    
+    Finished in 0.00062 seconds
+    2 examples, 1 failure
