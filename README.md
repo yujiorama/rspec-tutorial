@@ -320,3 +320,24 @@ its を使うとちょっとましになった。
         
         Finished in 0.00191 seconds
         6 examples, 0 failures
+
+its を share_examples_for に移した。
+        $ rspec -I. -fs message_filter_spec.rb                 
+        
+        MessageFilter
+          with argument "foo"
+            it should behave like exercise with argument "foo"
+              should be detect "hello from foo"
+              should not be detect "hello world"
+              ng_words
+                should not be empty
+          with argument "foo","bar"
+            should be detect "hello from foo"
+            it should behave like exercise with argument "foo"
+              should be detect "hello from foo"
+              should not be detect "hello world"
+              ng_words
+                should not be empty
+        
+        Finished in 0.00222 seconds
+        7 examples, 0 failures
