@@ -211,6 +211,7 @@ before が仕事してないので subject でインスタンスを生成する�
         5 examples, 0 failures
 
 describe をネストして、くどいメッセージをすっきりさせてみる。
+状況を説明していた describe を alias の context に変えた。
         $ rspec -I. -fs message_filter_spec.rb
         
         MessageFilter
