@@ -29,6 +29,7 @@ MessageFilter クラスを作る。そうするとエラーにならなくなる
     0 examples, 0 failures
 
 example を追加した。NoMethodError で怒られてる。
+コンストラクタ無いのはいいのかしら...
     $ rspec -I. message_filter_spec.rb
     F
     
@@ -41,4 +42,19 @@ example を追加した。NoMethodError で怒られてる。
          # ./message_filter_spec.rb:8:in `block (2 levels) in <top (required)>'
     
     Finished in 0.00043 seconds
+    1 example, 1 failure
+
+detect? メソッドの空実装をしてみた。
+    $ rspec -I. message_filter_spec.rb
+    F
+    
+    Failures:
+    
+      1) MessageFilter should detect message with NG word
+         Failure/Error: filter.detect?("hello from foo").should == true
+           expected: true
+                got: nil (using ==)
+         # ./message_filter_spec.rb:8:in `block (2 levels) in <top (required)>'
+    
+    Finished in 0.00052 seconds
     1 example, 1 failure
