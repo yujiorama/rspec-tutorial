@@ -158,3 +158,16 @@ before が仕事してないので subject でインスタンスを生成する�
     
     Finished in 0.00145 seconds
     3 examples, 1 failure
+
+えいやっと実装。テストは通るけど不安は残る。
+    $ rspec -I. -fs message_filter_spec.rb                 
+    
+    MessageFilter with argument "foo"
+      should be detect "hello from foo"
+      should not be detect "hello world"
+    
+    MessageFilter with argument "foo","bar"
+      should be detect "hello from foo"
+    
+    Finished in 0.00118 seconds
+    3 examples, 0 failures
