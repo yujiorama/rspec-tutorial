@@ -27,3 +27,18 @@ MessageFilter クラスを作る。そうするとエラーにならなくなる
     
     Finished in 0.00004 seconds
     0 examples, 0 failures
+
+example を追加した。NoMethodError で怒られてる。
+    $ rspec -I. message_filter_spec.rb
+    F
+    
+    Failures:
+    
+      1) MessageFilter should detect message with NG word
+         Failure/Error: filter.detect?("hello from foo").should == true
+         NoMethodError:
+           undefined method `detect?' for #<MessageFilter:0x9b686c8>
+         # ./message_filter_spec.rb:8:in `block (2 levels) in <top (required)>'
+    
+    Finished in 0.00043 seconds
+    1 example, 1 failure
