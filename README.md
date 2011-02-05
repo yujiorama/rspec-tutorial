@@ -234,3 +234,33 @@ describe をネストして、くどいメッセージをすっきりさせて�
         1st_spec_refactoring
         end_of_1st
         end_of_2nd
+
+
+3rd イテレーション
+==================
+
+登録された NG ワードが空でないことのための example を書いた。
+        $ rspec -I. -fs message_filter_spec.rb
+        
+        MessageFilter
+          with argument "foo"
+            ng_words should not be empty (FAILED - 1)
+            it should behave like exercise with argument "foo"
+              should be detect "hello from foo"
+              should not be detect "hello world"
+          with argument "foo","bar"
+            should be detect "hello from foo"
+            it should behave like exercise with argument "foo"
+              should be detect "hello from foo"
+              should not be detect "hello world"
+        
+        Failures:
+        
+          1) MessageFilter with argument "foo" ng_words should not be empty
+             Failure/Error: subject.ng_words.empty?.should == false
+             NoMethodError:
+               undefined method `ng_words' for #<MessageFilter:0x94093f0 @words=["foo"]>
+             # ./message_filter_spec.rb:15:in `block (3 levels) in <top (required)>'
+        
+        Finished in 0.00253 seconds
+        6 examples, 1 failure
