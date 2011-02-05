@@ -16,3 +16,14 @@ http://d.hatena.ne.jp/t-wada/20100228/p1
             from /home/yuji/.gem/ruby/1.9.1/gems/rspec-core-2.4.0/lib/rspec/core/runner.rb:46:in `run'
             from /home/yuji/.gem/ruby/1.9.1/gems/rspec-core-2.4.0/lib/rspec/core/runner.rb:10:in `block in autorun'
 
+MessageFilter クラスを作る。そうするとエラーにならなくなる。
+なんか怒られてるのは無視しておこう。
+    $ cat message_filter.rb                             
+    class MessageFilter
+    end
+    $ rspec -I. message_filter_spec.rb
+    No examples were matched. Perhaps {:if=>#<Proc:0x8540418@/home/yuji/.gem/ruby/1.9.1/gems/rspec-core-2.4.0/lib/rspec/core/configuration.rb:50 (lambda)>, :unless=>#<Proc:0x85403dc@/home/yuji/.gem/ruby/1.9.1/gems/rspec-core-2.4.0/lib/rspec/core/configuration.rb:51 (lambda)>} is excluding everything?
+    
+    
+    Finished in 0.00004 seconds
+    0 examples, 0 failures
