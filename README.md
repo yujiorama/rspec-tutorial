@@ -365,3 +365,25 @@ NG word のサイズを返すことのテストを追加した。
         Finished in 0.00252 seconds
         8 examples, 0 failures
 
+説明を rspec に任せた。
+        $ rspec -I. -fs message_filter_spec.rb
+        
+        MessageFilter
+          with argument "foo"
+            it should behave like exercise with argument "foo"
+              should be detect "hello from foo"
+              should not be detect "hello world"
+              ng_words
+                should not be empty
+            ng_words
+              should have 1 items
+          with argument "foo","bar"
+            should be detect "hello from foo"
+            it should behave like exercise with argument "foo"
+              should be detect "hello from foo"
+              should not be detect "hello world"
+              ng_words
+                should not be empty
+        
+        Finished in 0.00264 seconds
+        8 examples, 0 failures
