@@ -58,3 +58,10 @@ detect? メソッドの空実装をしてみた。
     
     Finished in 0.00052 seconds
     1 example, 1 failure
+
+テストを通すための仮実装!
+    $ rspec -I. message_filter_spec.rb
+    .
+    
+    Finished in 0.00038 seconds
+    1 example, 0 failures
