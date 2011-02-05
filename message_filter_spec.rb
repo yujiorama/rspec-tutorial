@@ -1,5 +1,5 @@
 require 'rubygems'
-require 'spec'
+require 'rspec'
 
 describe MessageFilter do
 end
