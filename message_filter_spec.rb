@@ -19,6 +19,7 @@ describe MessageFilter do
     subject { MessageFilter.new("foo", "bar") }
     it { should be_detect("hello from foo") }
     it_should_behave_like 'exercise with argument "foo"'
+    it { should have(2).ng_words }
   end
 end
 

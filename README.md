@@ -386,3 +386,26 @@ have マッチャの named_collection を使うようにした。
         
         Finished in 0.00264 seconds
         8 examples, 0 failures
+
+複数引数の context にも ng_words を数えるやつを追加。
+        $ rspec -I. -fs message_filter_spec.rb                                  
+        
+        MessageFilter
+          with argument "foo"
+            should have 1 ng_words
+            it should behave like exercise with argument "foo"
+              should be detect "hello from foo"
+              should not be detect "hello world"
+              ng_words
+                should not be empty
+          with argument "foo","bar"
+            should be detect "hello from foo"
+            should have 2 ng_words
+            it should behave like exercise with argument "foo"
+              should be detect "hello from foo"
+              should not be detect "hello world"
+              ng_words
+                should not be empty
+        
+        Finished in 0.00269 seconds
+        9 examples, 0 failures
