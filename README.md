@@ -409,3 +409,11 @@ have マッチャの named_collection を使うようにした。
         
         Finished in 0.00269 seconds
         9 examples, 0 failures
+
+3rd イテレーションはここまでなので tag "end_of_3rd" を打つ。
+        $ git tag -a -m 'end of 3rd iteration' end_of_3rd                      
+        $ git tag
+        1st_spec_refactoring
+        end_of_1st
+        end_of_2nd
+        end_of_3rd
