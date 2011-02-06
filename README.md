@@ -1,10 +1,8 @@
 TDD 写経
 ========
 
--1st イテレーション::
-        http://d.hatena.ne.jp/t-wada/20100228/p1
--2nd イテレーション::
-        http://d.hatena.ne.jp/t-wada/20100306/p1
+* [1st イテレーション](http://d.hatena.ne.jp/t-wada/20100228/p1)
+* [2nd イテレーション](http://d.hatena.ne.jp/t-wada/20100306/p1)
 
 1st イテレーション
 ==================
@@ -366,6 +364,7 @@ NG word のサイズを返すことのテストを追加した。
         8 examples, 0 failures
 
 説明を rspec に任せた。
+have マッチャの named_collection を使うようにした。
         $ rspec -I. -fs message_filter_spec.rb
         
         MessageFilter
