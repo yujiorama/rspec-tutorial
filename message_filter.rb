@@ -8,7 +8,11 @@ class MessageFilter
   attr_accessor :ignore_case
   
   def detect? text
-    @ng_words.any? {|w| text.downcase.include? w.downcase}
+    if @ignore_case
+      @ng_words.any? {|w| text.downcase.include? w.downcase}
+    else
+      @ng_words.any? {|w| text.include? w}
+    end
   end
 end
 
