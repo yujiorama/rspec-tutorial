@@ -76,6 +76,19 @@ describe MessageFilter do
       it { should be_detect("hello FOO") }
       it { should have(1).ng_words }
     end
+    
+    context 'with argument "foo","bar" when enable invert' do
+      subject {
+        m = MessageFilter.new("foo", "bar")
+        m.invert = true
+        m
+      }
+      its(:invert) { should be_true }
+      it { should_not be_detect("hello from foo") }
+      it { should_not be_detect("hello from bar") }
+      it { should have(2).ng_words }
+    end
+    
   end
 end
 
