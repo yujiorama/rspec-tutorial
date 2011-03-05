@@ -73,7 +73,7 @@ describe MessageFilter do
       }
       its(:invert) { should be_true }
       it { should_not be_detect("hello from foo") }
-      it { should_not be_detect("hello FOO") }
+      it { should be_detect("hello FOO") }
       it { should have(1).ng_words }
     end
   end
