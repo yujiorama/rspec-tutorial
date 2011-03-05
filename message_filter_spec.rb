@@ -28,6 +28,7 @@ describe MessageFilter do
       m.ignore_case = true
       m
     }
+    its(:ignore_case) { should be_true }
     it { should be_detect("hello from foo") }
     it_should_behave_like 'exercise with argument "foo"'
     it { should be_detect("hello FOO") }
@@ -40,6 +41,7 @@ describe MessageFilter do
       m.ignore_case = true
       m
     }
+    its(:ignore_case) { should be_true }
     it { should be_detect("hello from foo") }
     it_should_behave_like 'exercise with argument "foo"'
     it { should be_detect("hello FOO") }
@@ -52,6 +54,7 @@ describe MessageFilter do
       m.ignore_case = false
       m
     }
+    its(:ignore_case) { should be_false }
     it { should be_detect("hello from foo") }
     it_should_behave_like 'exercise with argument "foo"'
     it { should_not be_detect("hello FOO") }
@@ -59,4 +62,5 @@ describe MessageFilter do
   end
 
 end
+
 
