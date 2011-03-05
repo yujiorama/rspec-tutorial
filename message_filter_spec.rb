@@ -21,6 +21,16 @@ describe MessageFilter do
     it_should_behave_like 'exercise with argument "foo"'
     it { should have(2).ng_words }
   end
+  
+  context 'with argument "foo" attribute with ignore_case' do
+    subject {
+      m = MessageFilter.new("foo")
+      m.ignore_case = true
+    }
+    it { should be_detect("hello from foo") }
+    it_should_behave_like 'exercise with argument "foo"'
+    it { should be_detect("hello FOO") }
+    it { should have(1).ng_words }
+  end
 end
-
 
